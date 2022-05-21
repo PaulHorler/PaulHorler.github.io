@@ -1,0 +1,213 @@
+* {
+  font-family: sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background: linear-gradient(
+    45deg,
+    rgba(4, 40, 26, 1) 0%,
+    rgba(28, 195, 134, 1) 56%,
+    rgba(17, 218, 219, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  /* Display */
+  display: grid;
+  grid-template-columns: calc(50vw - 3em / 2) calc(50vw 3em / 2);
+  grid-template-rows: calc(12% - 2em / 3) calc(40% - 2em / 3) calc(
+      48% - 2em / 3
+    );
+  grid-gap: 1em;
+}
+
+.network {
+  max-width: calc(50vw - 1.5em);
+  padding: 1em;
+  /* Glasseffekt */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 0.8em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+}
+
+.inputBox {
+  display: grid;
+  grid-template-columns: 50%;
+  grid-template-rows: 100%;
+  grid-auto-flow: column;
+  grid-gap: 0.5em;
+}
+
+.inputValues {
+  padding: 1em;
+  display: grid;
+  grid-template-rows: 1/3 1/3 1/3;
+  grid-gap: 3em;
+  /* Glasseffekt */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 0.8em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+}
+
+.inputValues h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.addElem {
+  min-width: calc(50vw - 1.5em);
+  display: grid;
+  grid-template-columns: calc(33% - 0.5em / 3) calc(33% - 0.5em / 3) calc(
+      33% - 0.5em / 3
+    );
+  grid-gap: 0.5em;
+}
+
+.addElem button {
+  height: 100%;
+  border: none;
+  border-radius: 0.4em;
+  color: #000;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  transition: 200ms;
+}
+
+.addElem button:hover {
+  background: rgba(255, 255, 255, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  color: #fff;
+}
+
+.activBtn {
+  color: #f00;
+}
+
+.inactiveBtn {
+  color: #000;
+}
+
+.addElem button:hover p {
+  color: #fff;
+}
+
+#addNode {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#addEdge {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#searchBtn {
+  color: #000;
+  font-weight: 500;
+  font-size: 1.5em;
+  background-color: #fff;
+  border: none;
+  transition: 200ms;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#searchBtn:hover {
+  background: rgba(97, 60, 60, 0);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  color: #fff;
+}
+
+.mainHeading {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* font-size: 2vh; */
+  /* Glasseffekt */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 0.8em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+  padding: 1rem;
+}
+
+.mainHeading h1 {
+  font-size: 5vh;
+}
+
+#resultBox {
+  padding: 1em;
+  overflow-y: auto;
+  /* Glasseffekt */
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 0.8em;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+}
+
+#resultBox::-webkit-scrollbar {
+  display: none;
+}
+
+.example {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.result {
+  height: 4em;
+  border-bottom: 0.15em solid #fff;
+  padding: 0 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result p {
+  font-size: 1.5em;
+}
+
+.result button {
+  height: 2.5em;
+  width: 20%;
+  border: none;
+  color: #000;
+  background-color: #fff;
+  border-radius: 0.3em;
+  transition: 200ms;
+}
+
+.result button:hover {
+  color: #fff;
+  /* Glasseffekt */
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.9px);
+  -webkit-backdrop-filter: blur(9.9px);
+}
+
+.noResult {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noResult p {
+  font-size: 2em;
+}
