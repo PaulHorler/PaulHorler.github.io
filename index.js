@@ -18,6 +18,10 @@ const searchBtn = document.getElementById("searchBtn");
 const resetBtn = document.getElementById("resetBtn");
 const resultBox = document.getElementById("resultBox");
 const container = document.getElementById("inputNetwork");
+const instructions = document.getElementById("instructions");
+const modal = document.querySelector(".modal");
+const modalBackground = document.querySelector(".overlay");
+const closeModal = document.getElementById("closeModal");
 const results = [];
 
 // Setup input network
@@ -230,6 +234,34 @@ editEdge.addEventListener("click", (e) => {
 resetBtn.addEventListener("click", (e) => {
   e.preventDefault();
   resetAll();
+});
+
+instructions.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  modalBackground.classList.remove("hidden");
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    modalBackground.classList.add("hidden");
+  }
+});
+
+modalBackground.addEventListener("click", () => {
+  if (!modal.classList.contains("hidden")) {
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    modalBackground.classList.add("hidden");
+  }
+});
+
+closeModal.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  modal.classList.remove("flex");
+  modalBackground.classList.add("hidden");
 });
 
 searchBtn.addEventListener("click", () => {
