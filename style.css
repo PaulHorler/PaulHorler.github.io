@@ -223,6 +223,11 @@ body {
   position: fixed;
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0);
+  transition: 200ms;
+}
+
+#instructions:hover {
+  color: rgb(240, 240, 240);
 }
 
 .hidden {
@@ -301,4 +306,12 @@ body {
   width: 70%;
   border-radius: 0.8em;
   align-self: center;
+}
+
+#closeModal {
+  transition: 200ms;
+}
+
+#closeModal:hover {
+  color: rgb(63, 63, 63);
 }
