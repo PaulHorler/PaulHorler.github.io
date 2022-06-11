@@ -367,39 +367,3 @@ searchBtn.addEventListener("click", () => {
     });
   }
 });
-
-// Tests
-const test1 = () => {
-  nodeList = [];
-  addNodes(5);
-  edgeList = [
-    { from: 1, to: 2 },
-    { from: 1, to: 3 },
-    { from: 1, to: 5 },
-    { from: 2, to: 3 },
-    { from: 2, to: 4 },
-    { from: 2, to: 5 },
-    { from: 3, to: 4 },
-    { from: 4, to: 5 },
-  ];
-  edges = new vis.DataSet(edgeList);
-  nodes = new vis.DataSet(nodeList);
-  data = {
-    nodes,
-    edges,
-  };
-  network = new vis.Network(container, data, options);
-};
-
-const addNodes = (numberNodes) => {
-  const nodeListLength = nodeList.length;
-  for (let i = nodeListLength + 1; i < numberNodes + 1 + nodeListLength; i++) {
-    nodeList.push({ id: i, label: `${i}` });
-  }
-  nodes = new vis.DataSet(nodeList);
-  data = {
-    nodes,
-    edges,
-  };
-  network = new vis.Network(container, data, options);
-};
