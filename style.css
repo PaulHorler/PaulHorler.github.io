@@ -71,6 +71,8 @@ body {
 
 .addElem button {
   height: 100%;
+  width: 100%;
+  max-width: 100%;
   border: none;
   border-radius: 0.4em;
   color: #000;
